@@ -30,11 +30,11 @@ fn main() {
     let word = get_random_word(words);
 
     let mut guessed_letters: Vec<char> = Vec::new();
-    let mut max_guesses:u8 = 6;
+    let mut guesses:u8 = 6;
     let mut exit = false;
 
-    while max_guesses > 0 && !exit {
-        println!("{} guesses left", max_guesses);
+    while guesses > 0 && !exit {
+        println!("{} guesses left", guesses);
         for c in word.chars() {
             if guessed_letters.contains(&c) {
                 print!("{}", c);
@@ -62,7 +62,7 @@ fn main() {
         guessed_letters.push(guessed_char);
 
         if !word.contains(&guessed_char.to_string()) {
-            max_guesses -= 1;
+            guesses -= 1;
         }
 
         exit = true;
@@ -76,11 +76,11 @@ fn main() {
         println!();
     }
 
-    if max_guesses == 0 {
+    if guesses == 0 {
         println!("You lost!");
         println!("The word was {}.", word);
     } else {
         println!("You won!");
-        println!("You had {} guesses left to get {}.", max_guesses, word);
+        println!("You had {} guesses left to get {}.", guesses, word);
     }
 }
