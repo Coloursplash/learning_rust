@@ -55,6 +55,32 @@ fn main() {
             Err(_) => continue,
         };
 
+        if guessed_letters.contains(&guessed_char) || !guessed_char.is_alphabetic() {
+            continue;
+        }
+
         guessed_letters.push(guessed_char);
+
+        if !word.contains(&guessed_char.to_string()) {
+            guesses -= 1;
+        }
+
+        exit = true;
+        
+        for c in word.chars() {
+            if !guessed_letters.contains(&c) {
+                exit = false;
+            }
+        }
+
+        println!();
+    }
+
+    if guesses == 0 {
+        println!("You lost!");
+        println!("The word was {}.", word);
+    } else {
+        println!("You won!");
+        println!("You had {} guesses left to get {}.", guesses, word);
     }
 }
