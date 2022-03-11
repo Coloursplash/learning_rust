@@ -1,14 +1,20 @@
 # Learning Rust
 
+The Rust programming language is perfect for systems-level applications like servers as well as large projects like game engines.
+
 This repository is where I have been learning the Rust programming language. Feel free to look around!
 
-Not only can this teach you some fundementals of Rust,but it can be a great revision guide if you forget something in the future.
+Not only can this teach you some fundementals of Rust, but it can be a great revision guide if you forget something in the future.
 
 ## Notes
 
 Rust uses snake case, not camel case, so all variables and projects will be styled as 'example_text'.
 
 For loops are normally used over while loops because they have more safety and are more concise. Even for looping within a certain range, a range can be generated as an array such as `for i in (1..4) {code here}`.
+
+Conditions for if statements and while loops do not require brackets surrounding them.
+
+Arrays and tuples both have a fixed size and cannot change size once declared.
 
 ## Cargo
 
